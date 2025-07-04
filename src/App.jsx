@@ -25,6 +25,8 @@ function App() {
       <div className="dice-container">
         {newDices}
       </div>
+
+      <button className="new-dice--btn">Roll new</button>
     </main>
   )
 }
