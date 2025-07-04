@@ -21,7 +21,7 @@ function App() {
   }
 
   const newDices = diceNumbers.map((item, index, isHeld) => {
-    return <Dice key={item.id} value={item.value} isheld={isHeld} />
+    return <Dice key={item.id} value={item.value} isHeld={item.isHeld} />
   })
 
 
