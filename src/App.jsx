@@ -13,6 +13,10 @@ function App() {
     return numbersArray;
   }
 
+  function rollDice() {
+    const newDiceRoll = randomDice();
+    setDiceNumbers(newDiceRoll);
+  }
 
   const newDices = diceNumbers.map((number, index) => {
     return <Dice key={index} value={number} />
@@ -26,7 +30,7 @@ function App() {
         {newDices}
       </div>
 
-      <button className="new-dice--btn">Roll new</button>
+      <button className="new-dice--btn" onClick={rollDice}>Roll new</button>
     </main>
   )
 }
