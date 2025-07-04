@@ -8,7 +8,7 @@ function App() {
     const numbersArray = [];
     while (numbersArray.length < 10) {
       const randomNumber = Math.floor(Math.random() * 6) + 1;
-      numbersArray.push(randomNumber);
+      numbersArray.push({ value: randomNumber, isHeld: false });
     }
     return numbersArray;
   }
@@ -18,8 +18,8 @@ function App() {
     setDiceNumbers(newDiceRoll);
   }
 
-  const newDices = diceNumbers.map((number, index) => {
-    return <Dice key={index} value={number} />
+  const newDices = diceNumbers.map((item, index) => {
+    return <Dice key={index} value={item.value} />
   })
 
 
