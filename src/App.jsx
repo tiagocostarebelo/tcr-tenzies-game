@@ -1,21 +1,29 @@
 import Dice from './components/Dice'
+import { useState } from 'react'
 
 function App() {
+  const [diceNumbers, setDiceNumbers] = useState(randomDice());
+
+  function randomDice() {
+    const numbersArray = [];
+    while (numbersArray.length < 10) {
+      const randomNumber = Math.floor(Math.random() * 6) + 1;
+      numbersArray.push(randomNumber);
+    }
+    return numbersArray;
+  }
+
+
+  const newDices = diceNumbers.map((number, index) => {
+    return <Dice key={index} value={number} />
+  })
+
 
   return (
     <main>
       <h1 className="title">Tenzies</h1>
       <div className="dice-container">
-        <Dice value="1" />
-        <Dice value="2" />
-        <Dice value="3" />
-        <Dice value="4" />
-        <Dice value="5" />
-        <Dice value="6" />
-        <Dice value="7" />
-        <Dice value="8" />
-        <Dice value="9" />
-        <Dice value="0" />
+        {newDices}
       </div>
     </main>
   )
