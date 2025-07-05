@@ -20,8 +20,14 @@ function App() {
     console.log(diceNumbers)
   }
 
-  const newDices = diceNumbers.map((item, index, isHeld) => {
-    return <Dice key={item.id} value={item.value} isHeld={item.isHeld} />
+  function hold(id) {
+    setDiceNumbers(prevDiceNumbers => prevDiceNumbers.map(item => {
+      return item.id === id ? { ...item, isHeld: !item.isHeld } : item
+    }))
+  }
+
+  const newDices = diceNumbers.map((item) => {
+    return <Dice key={item.id} id={item.id} value={item.value} isHeld={item.isHeld} hold={hold} />
   })
 
 
