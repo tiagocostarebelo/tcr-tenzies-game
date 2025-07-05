@@ -15,8 +15,7 @@ function App() {
   }
 
   function rollDice() {
-    const newDiceRoll = randomDice();
-    setDiceNumbers(newDiceRoll);
+    setDiceNumbers(oldDice => oldDice.map(item => item.isHeld ? item : { ...item, value: Math.floor(Math.random() * 6) + 1 }));
     console.log(diceNumbers)
   }
 
@@ -34,6 +33,7 @@ function App() {
   return (
     <main>
       <h1 className="title">Tenzies</h1>
+
       <div className="dice-container">
         {newDices}
       </div>
