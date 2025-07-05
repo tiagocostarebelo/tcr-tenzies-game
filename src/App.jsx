@@ -5,6 +5,9 @@ import { nanoid } from 'nanoid'
 function App() {
   const [diceNumbers, setDiceNumbers] = useState(randomDice());
 
+  const gameWon = diceNumbers.every(dice => dice.isHeld) &&
+    diceNumbers.every(dice => dice.value === diceNumbers[0].value)
+
   function randomDice() {
     const numbersArray = [];
     while (numbersArray.length < 10) {
@@ -40,7 +43,7 @@ function App() {
         {newDices}
       </div>
 
-      <button className="new-dice--btn" onClick={rollDice}>Roll new</button>
+      <button className="new-dice--btn" onClick={rollDice}>{gameWon ? "New Game" : "Roll"}</button>
     </main>
   )
 }
