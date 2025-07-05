@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid'
 import Confetti from 'react-confetti'
 
 function App() {
-  const [diceNumbers, setDiceNumbers] = useState(randomDice());
+  const [diceNumbers, setDiceNumbers] = useState(() => randomDice());
 
   const gameWon = diceNumbers.every(dice => dice.isHeld) &&
     diceNumbers.every(dice => dice.value === diceNumbers[0].value)
@@ -19,20 +19,17 @@ function App() {
   }
 
   function rollDice() {
-    setDiceNumbers(oldDice => oldDice.map(item => item.isHeld ? item : { ...item, value: Math.floor(Math.random() * 6) + 1 }));
-    console.log(diceNumbers)
+    if (!gameWon) {
+      setDiceNumbers(oldDice => oldDice.map(item => item.isHeld ? item : { ...item, value: Math.floor(Math.random() * 6) + 1 }));
+    } else {
+      setDiceNumbers(randomDice())
+    }
   }
 
   function hold(id) {
     setDiceNumbers(prevDiceNumbers => prevDiceNumbers.map(item => {
       return item.id === id ? { ...item, isHeld: !item.isHeld } : item
     }))
-  }
-
-  function clearHeld() {
-    if (gameWon) {
-      diceNumbers.every(dice => dice.isHeld = false);
-    }
   }
 
   const newDices = diceNumbers.map((item) => {
