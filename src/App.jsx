@@ -1,4 +1,5 @@
 import Dice from './components/Dice'
+import Stopwatch from './components/Stopwatch'
 import { useState } from 'react'
 import { nanoid } from 'nanoid'
 import Confetti from 'react-confetti'
@@ -44,6 +45,7 @@ function App() {
         <h1 className="title">Tenzies</h1>
         <p>Roll until all dice are the same. Click each die to freeze it as its current value between rolls.</p>
       </div>
+      <Stopwatch />
       <div className="dice-container">
         {newDices}
       </div>

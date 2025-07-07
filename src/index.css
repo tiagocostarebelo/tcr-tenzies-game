@@ -43,6 +43,15 @@ main {
   margin: 0;
   color: #7b7b7b;
   font-size: 1rem;
+  text-align: center;
+}
+
+.stop-watch {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 1rem;
 }
 
 .title {
