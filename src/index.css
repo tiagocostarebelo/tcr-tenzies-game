@@ -52,14 +52,17 @@ main {
   text-align: center;
 }
 
-.timer {
+.records {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  column-gap: 1rem;
 }
 
 .stopwatch>h3,
-.best-time>h3 {
+.best-time>h3,
+.rolls>h3,
+.best-rolls>h3 {
   margin: 0;
   padding-top: 1rem;
   color: #242424;
@@ -68,7 +71,7 @@ main {
 
 .display {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #7b7b7b;
   margin: 0;
@@ -117,10 +120,7 @@ main {
 }
 
 @media screen and (max-width: 425px) {
-  .timer {
-    display: flex;
+  .records {
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
   }
 }
