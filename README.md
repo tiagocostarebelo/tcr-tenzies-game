@@ -1,12 +1,76 @@
-# React + Vite
+# 10rollzies Game – Built with React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun dice-rolling game where the goal is to get all dice to show the same value. Freeze the dice you want to keep and roll the rest until you match them all.
 
-Currently, two official plugins are available:
+Built as part of a React learning journey — this project uses modern React concepts such as `useState`, `useEffect`, `useRef`, and `localStorage`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Win by holding dice until all values match
+- Timer that starts on game load and stops on win
+- Roll counter to track how many rolls it took to win
+- Best time and roll count saved using `localStorage`
+- Confetti animation when you win
+- Responsive layout and simple, clean UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## What I Learned
+
+- Managing React component state with `useState`
+- Side effects and timers using `useEffect`
+- Persistent mutable values with `useRef`
+- Handling conditional rendering and state-based UI logic
+- Working with `localStorage` for persisting data across sessions
+- Component composition and prop management
+
+## Tech Stack
+
+- React (Functional components + hooks)
+- Vite (Development bundler)
+- nanoid (Unique ID generation for dice)
+- react-confetti (Win animation)
+- CSS Modules (Simple global styling)
+
+## Screenshots
+
+![Game Screenshot](./assets/roll.png)
+
+### 🏆 Winning State with Confetti
+
+![Winning Screenshot](./assets/win.png)
+
+## Getting Started
+
+### Clone the repo
+
+```bash
+git clone https://github.com/tiagocostarebelo/tcr-tenzies-game.git
+cd tcr-tenzies-game
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Start the Dev server
+
+```bash
+npm run dev
+```
+
+## How to Play
+
+1. Click the Roll button to roll all dice.
+2. Click on individual dice to "hold" their value.
+3. Keep rolling until all dice show the same number.
+4. Your time and roll count are tracked — try to beat your best score!
+
+## To-do / Future Enchancements
+
+- Add difficulty levels (e.g., 6 vs 10 dice)
+- Add leaderboard or saved history
+
+## License
+
+MIT - Feel free to use or adapt the code for your own projects.
